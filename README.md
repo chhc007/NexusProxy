@@ -19,7 +19,7 @@
 推荐使用 Docker Compose 进行部署。
 
 ### 1. 准备目录结构
-在你的 NAS 或服务器上创建一个目录（例如 `/opt/jackett-proxy`），并在其中创建 `docker-compose.yml`：
+在你的 NAS 或服务器上创建一个目录（例如 `/opt/nexusproxy`），并在其中创建 `docker-compose.yml`：
 
 [配置示例](docker-compose.yml)
 
