@@ -42,7 +42,7 @@ class JackettModule(BaseSearchModule):
         logger.info(f"[Jackett] 发起搜索请求: {url} | 参数: q={keyword}")
         
         start_time = time.time()
-        r = await self.http_client.get(url, params=params)
+        r = await self.http_client.get(url, params=params, timeout=300)
         elapsed = time.time() - start_time
         
         logger.info(f"[Jackett] 响应状态: {r.status_code} | 耗时: {elapsed:.2f}s | 数据大小: {len(r.text)} bytes")
