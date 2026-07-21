@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+
+.env
+mock_plugin.py
+*.log
+
+data/
+config/
+
+.vscode/
+
+.idea/
+

@@ -1,0 +1,24 @@
+services:
+  NexusProxy:
+    #build: .
+    image: chhc007/NexusProxy:latest
+    container_name: NexusProxy
+    restart: unless-stopped
+    ports:
+      - "9118:9118"
+    environment:
+      
+      - LOG_LEVEL=INFO #日志级别控制：可选 INFO, DEBUG, WARNING, ERROR
+      - DEBUG_MODE=false # 调试时改为True, 可以在没有模块时也能返回内容
+      
+      # 通用配置
+      - CACHE_TTL=60 #搜索结果缓存时间，防止短时间多次请求相同结果
+      - ENABLE_FALLBACK=true #自带的垃圾数据过滤器
+      - PLUGIN_HTTP_PROXY=http://192.168.123.146:7890  #专门给插件使用的 HTTP 代理变量
+      
+      # 默认的 Jackett 模块配置
+      - JACKETT_URL=http://192.168.123.146:9117
+      - JACKETT_APIKEY=mpabshnoihxmj3sjpfy1qxuf5obbt66w
+
+    volumes:
+      - /vol4/1000/DockerConfig/NexusProxy/modules:/app/modules #用于挂载自定义模块，说明看文档
