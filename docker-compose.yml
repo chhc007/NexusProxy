@@ -1,7 +1,7 @@
 services:
   NexusProxy:
     #build: .
-    image: chhc007/NexusProxy:latest
+    image: chhc007/nexusproxy:latest
     container_name: NexusProxy
     restart: unless-stopped
     ports:
